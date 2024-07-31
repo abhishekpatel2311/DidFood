@@ -68,7 +68,7 @@ class _SignupMainState extends State<SignupMain> {
                       child: AppTextField(
                         controller: userIdController,
                         hintText: 'madeofzero . . |',
-                        prefixIcon: Image.asset('assets/images/Profile.png',color: Colors.black,),
+                        prefixIcon: Image.asset('assets/images/Profile.png',/* color: Colors.black, - Now we can skip this */),
                       ),
                     ),
                     const SizedBox(height: 12.0),
