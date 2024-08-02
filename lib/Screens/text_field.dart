@@ -30,6 +30,7 @@ class AppTextField extends StatelessWidget {
       },
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
         filled: true,
         fillColor: Colors.white,
         contentPadding: EdgeInsets.all(20.0),

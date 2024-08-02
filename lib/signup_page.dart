@@ -68,7 +68,7 @@ class _SignupMainState extends State<SignupMain> {
                       child: AppTextField(
                         controller: userIdController,
                         hintText: 'madeofzero . . |',
-                        prefixIcon: Image.asset('assets/images/Profile.png',color: Colors.black,),
+                        prefixIcon: Image.asset('assets/images/Profile.png'),
                       ),
                     ),
                     const SizedBox(height: 12.0),
@@ -184,7 +184,7 @@ class _SignupMainState extends State<SignupMain> {
                           context,
                           PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: const SignInPage(),
+                            child: const Signin(),
                           ),
                         );
                       },
@@ -210,3 +210,5 @@ class _SignupMainState extends State<SignupMain> {
     );
   }
 }
+
+
