@@ -180,11 +180,11 @@ class _SignupMainState extends State<SignupMain> {
                     const SizedBox(height: 14.0),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: const SignInPage(),
+                            child: const Signin(),
                           ),
                         );
                       },

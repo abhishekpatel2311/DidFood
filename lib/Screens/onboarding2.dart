@@ -55,7 +55,7 @@ class Onboarding2 extends StatelessWidget {
                         ),
                         fixedSize: const Size(157, 57)),
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         PageTransition(
                           type: PageTransitionType.rightToLeft,

@@ -173,7 +173,7 @@ class _SigninState extends State<Signin> {
                     const SizedBox(height: 14.0),
                     TextButton(
                       onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (Context)=>SignUpProcess()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (Context)=>SignUpProcess()));
                       },
                       style: TextButton.styleFrom(
                         foregroundColor: const Color(0xFF6B50F6),

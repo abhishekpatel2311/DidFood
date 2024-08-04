@@ -1,5 +1,7 @@
-import 'package:didfood/signup_page.dart';
+
 import 'package:flutter/material.dart';
+
+import 'Screens/splash_screen.dart';
 
 
 void main() {
