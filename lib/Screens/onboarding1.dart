@@ -1,7 +1,5 @@
 import 'package:didfood/Screens/onboarding2.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
-
 import '../backGround_Image.dart';
 
 class Onboarding1 extends StatelessWidget {
@@ -59,21 +57,25 @@ class Onboarding1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation, secondaryAnimation) => const Onboarding2(),
-                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                              const begin = Offset(0.0, 1.0);
-                              const end = Offset.zero;
-                              const curve = Curves.ease;
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const Onboarding2(),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            const begin = Offset(0.0, 1.0);
+                            const end = Offset.zero;
+                            const curve = Curves.ease;
 
-                              var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                            var tween = Tween(begin: begin, end: end)
+                                .chain(CurveTween(curve: curve));
 
-                              return SlideTransition(
-                                position: animation.drive(tween),
-                                child: child,
-                              );
-                            },
-                          ),
+                            return SlideTransition(
+                              position: animation.drive(tween),
+                              child: child,
+                            );
+                          },
+                        ),
                       );
                     },
                     child: const Center(

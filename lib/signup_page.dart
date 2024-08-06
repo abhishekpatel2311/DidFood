@@ -1,8 +1,6 @@
 import 'package:didfood/Screens/sign_in.dart';
 import 'package:didfood/backGround_Image.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
-
 
 import 'Screens/text_field.dart';
 
@@ -34,8 +32,6 @@ class _SignupMainState extends State<SignupMain> {
       ),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +65,10 @@ class _SignupMainState extends State<SignupMain> {
                       child: AppTextField(
                         controller: userIdController,
                         hintText: 'madeofzero . . |',
-                        prefixIcon: Image.asset('assets/images/Profile.png',color: Colors.black,),
+                        prefixIcon: Image.asset(
+                          'assets/images/Profile.png',
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 12.0),
@@ -164,9 +163,7 @@ class _SignupMainState extends State<SignupMain> {
                             borderRadius: BorderRadius.circular(15.0),
                           ),
                           fixedSize: const Size(175, 57)),
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: const Center(
                         child: Text(
                           'Create Account',
@@ -183,21 +180,25 @@ class _SignupMainState extends State<SignupMain> {
                       onPressed: () {
                         Navigator.pushReplacement(
                           context,
-                            PageRouteBuilder(
-                              pageBuilder: (context, animation, secondaryAnimation) => const Signin(),
-                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                const begin = Offset(0.0, 1.0);
-                                const end = Offset.zero;
-                                const curve = Curves.ease;
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const Signin(),
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
 
-                                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
 
-                                return SlideTransition(
-                                  position: animation.drive(tween),
-                                  child: child,
-                                );
-                              },
-                            ),
+                              return SlideTransition(
+                                position: animation.drive(tween),
+                                child: child,
+                              );
+                            },
+                          ),
                         );
                       },
                       style: TextButton.styleFrom(

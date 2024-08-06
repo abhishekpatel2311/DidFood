@@ -1,6 +1,5 @@
 import 'package:didfood/Screens/onboarding1.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
 import '../backGround_Image.dart';
 
@@ -32,7 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
         const begin = Offset(0.0, 1.0);
         const end = Offset.zero;
         const curve = Curves.ease;
-
 
         var tween =
             Tween(begin: begin, end: end).chain(CurveTween(curve: curve));

@@ -1,7 +1,6 @@
 import 'package:didfood/backGround_Image.dart';
 import 'package:flutter/material.dart';
 
-
 import '../signup_page.dart';
 
 class Onboarding2 extends StatelessWidget {
@@ -17,7 +16,7 @@ class Onboarding2 extends StatelessWidget {
             const BackImage(),
             SingleChildScrollView(
               child: Column(
-                  children: [
+                children: [
                   const Padding(
                     padding: EdgeInsets.only(top: 123.0),
                     child: Image(
@@ -58,21 +57,25 @@ class Onboarding2 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation, secondaryAnimation) => const SignupMain(),
-                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                              const begin = Offset(0.0, 1.0);
-                              const end = Offset.zero;
-                              const curve = Curves.ease;
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  const SignupMain(),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            const begin = Offset(0.0, 1.0);
+                            const end = Offset.zero;
+                            const curve = Curves.ease;
 
-                              var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                            var tween = Tween(begin: begin, end: end)
+                                .chain(CurveTween(curve: curve));
 
-                              return SlideTransition(
-                                position: animation.drive(tween),
-                                child: child,
-                              );
-                            },
-                          ),
+                            return SlideTransition(
+                              position: animation.drive(tween),
+                              child: child,
+                            );
+                          },
+                        ),
                       );
                     },
                     child: const Center(
