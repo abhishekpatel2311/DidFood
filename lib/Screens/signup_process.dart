@@ -45,7 +45,7 @@ class SignUpProcess extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Bentonsans_Regular',
                             fontSize: 14,
-                            color: Colors.grey,
+                            color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 20.0),
@@ -72,9 +72,9 @@ class SignUpProcess extends StatelessWidget {
                             ),
                             hintText: 'First Name',
                             hintStyle: TextStyle(
-                              fontFamily: 'Bentonsans_Regular',
-                              fontSize: 14,
-                            ),
+                                fontFamily: 'Bentonsans_Regular',
+                                fontSize: 14,
+                                color: Colors.black),
                           ),
                         ),
                         const SizedBox(height: 20.0),

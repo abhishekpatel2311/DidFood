@@ -10,6 +10,7 @@ class Onboarding1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -58,10 +59,21 @@ class Onboarding1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: const Onboarding2(),
-                        ),
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) => const Onboarding2(),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+
+                              var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                              return SlideTransition(
+                                position: animation.drive(tween),
+                                child: child,
+                              );
+                            },
+                          ),
                       );
                     },
                     child: const Center(

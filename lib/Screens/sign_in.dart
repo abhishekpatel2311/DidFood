@@ -1,10 +1,7 @@
-
 import 'package:didfood/Screens/signup_process.dart';
 import 'package:didfood/Screens/text_field.dart';
 import 'package:didfood/backGround_Image.dart';
 import 'package:flutter/material.dart';
-
-
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
@@ -17,7 +14,6 @@ class _SigninState extends State<Signin> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool _obscurePassword = true;
-
 
   GestureDetector eyeToggle() {
     return GestureDetector(
@@ -32,11 +28,10 @@ class _SigninState extends State<Signin> {
     );
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -172,8 +167,29 @@ class _SigninState extends State<Signin> {
                     ),
                     const SizedBox(height: 14.0),
                     TextButton(
-                      onPressed: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (Context)=>SignUpProcess()));
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    const SignUpProcess(),
+                            transitionsBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+
+                              var tween = Tween(begin: begin, end: end)
+                                  .chain(CurveTween(curve: curve));
+
+                              return SlideTransition(
+                                position: animation.drive(tween),
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
                       },
                       style: TextButton.styleFrom(
                         foregroundColor: const Color(0xFF6B50F6),

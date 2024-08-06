@@ -10,7 +10,10 @@ class BackImage extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage('assets/images/Pattern.png'),
             fit: BoxFit.fitWidth,
-            alignment: Alignment.topCenter),
+
+            alignment: Alignment.topCenter,
+
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:didfood/backGround_Image.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
+
 
 import '../signup_page.dart';
 
@@ -10,6 +10,7 @@ class Onboarding2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -57,10 +58,21 @@ class Onboarding2 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: const SignupMain(),
-                        ),
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) => const SignupMain(),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              const begin = Offset(0.0, 1.0);
+                              const end = Offset.zero;
+                              const curve = Curves.ease;
+
+                              var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                              return SlideTransition(
+                                position: animation.drive(tween),
+                                child: child,
+                              );
+                            },
+                          ),
                       );
                     },
                     child: const Center(
