@@ -60,7 +60,7 @@ class Onboarding2 extends StatelessWidget {
                         PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                                  const SignupMain(),
+                          const SignupMain(),
                           transitionsBuilder:
                               (context, animation, secondaryAnimation, child) {
                             const begin = Offset(0.0, 1.0);
