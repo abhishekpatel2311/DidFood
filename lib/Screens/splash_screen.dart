@@ -1,9 +1,8 @@
 import 'package:didfood/Screens/onboarding1.dart';
 import 'package:flutter/material.dart';
-
 import '../backGround_Image.dart';
 
-class SplashScreen extends StatefulWidget {
+  class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
@@ -25,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Route _createRoute() {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) =>
-          const Onboarding1(),
+             Onboarding1(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0);
         const end = Offset.zero;
@@ -39,6 +38,15 @@ class _SplashScreenState extends State<SplashScreen> {
           child: child,
         );
       },
+    );
+  }
+
+
+  _DisplayWidget(){
+    return Container(
+      height: 200,
+      width: 200,
+      color: Colors.black,
     );
   }
 

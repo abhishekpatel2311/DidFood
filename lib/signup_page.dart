@@ -162,15 +162,17 @@ class _SignupMainState extends State<SignupMain> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
-                          fixedSize: const Size(175, 57)),
+                          fixedSize: const Size(200, 57)),
                       onPressed: () {},
                       child: const Center(
-                        child: Text(
-                          'Create Account',
-                          style: TextStyle(
-                            fontFamily: 'BentonSans_Bold',
-                            fontSize: 16,
-                            color: Colors.white,
+                        child: Expanded(
+                          child: Text(
+                            'Create Account',
+                            style: TextStyle(
+                              fontFamily: 'BentonSans_Bold',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),

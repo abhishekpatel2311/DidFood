@@ -121,7 +121,7 @@ class SignUpProcess extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 220.0),
+                         SizedBox(height: 220),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF6B50F6),
